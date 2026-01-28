@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORÁCULO OTAKU | Global Neural Interface</title>
+    
+    <meta name="description" content="IA de predicción universal para recomendaciones de anime según tu estado emocional.">
+    <meta property="og:title" content="ORÁCULO OTAKU | Neural Interface">
+    <meta property="og:description" content="¿Qué deberías ver hoy? Deja que el Oráculo analice tu vector emocional.">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+<div class="scanner-line"></div>
+<div class="crt-overlay"></div>
+
+<div class="container" id="capture-area">
+    <header>
+        <div class="top-bar">
+            <div class="ai-status"><span class="blink">●</span> GLOBAL_DATABASE_LINKED</div>
+            <div class="user-counter">SCAN_ID: <span id="report-id">0000</span></div>
+        </div>
+        <h1 class="glitch" data-text="ORÁCULO OTAKU">ORÁCULO <span class="highlight">OTAKU</span></h1>
+        <p class="glitch-text">SISTEMA DE PREDICCIÓN UNIVERSAL</p>
+    </header>
+
+    <div id="input-section">
+        <div class="input-group">
+            <label>ID_SUJETO</label>
+            <input type="text" id="nombre" placeholder="Tu nombre...">
+            <label>VECTOR EMOCIONAL</label>
+            <textarea id="animo" placeholder="Describe cómo te sientes (ej: triste, con ganas de acción...)"></textarea>
+            <div id="error-msg" class="error-text hidden">ERROR: DATOS INSUFICIENTES</div>
+        </div>
+        <button id="btn-analizar">INICIAR ESCANEO NEURAL</button>
+    </div>
+
+    <div id="loading" class="hidden">
+        <div class="spinner"></div>
+        <p class="loading-text">Buceando en la base de datos histórica...</p>
+    </div>
+
+    <div id="resultado" class="hidden">
+        <div id="rareza-tag">CARGANDO...</div>
+        <div class="card-header">
+            <span class="neon-text">NEURAL REPORT</span> | ID#<span id="report-num">0000</span>
+        </div>
+        <h2 id="mensajePersonal"></h2>
+        
+        <div class="anime-box">
+            <img id="animePoster" src="" class="hidden" crossorigin="anonymous">
+            <div class="label">RECOMENDACIÓN:</div>
+            <strong id="animeSugerido" class="anime-title"></strong>
+        </div>
+        
+        <p id="descripcionPrediccion"></p>
+        
+        <div class="stats">
+            <div class="stat-bar"><div id="prob-bar"></div></div>
+            <span>Sincronía: <span id="match-percent">0</span>%</span>
+        </div>
+
+        <div class="ad-placeholder">
+            <small>AD_PARTNER_LINK</small>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button id="share-button" class="hidden">EXPORTAR EXPEDIENTE (.PNG)</button>
+        <button id="btn-reset" class="hidden">NUEVO ESCANEO</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
